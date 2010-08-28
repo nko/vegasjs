@@ -9,5 +9,3 @@ http.createServer(function (req, res) {
   });
   
 }).listen(port)
-
-console.log("Server started on port " + port);
