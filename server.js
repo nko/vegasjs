@@ -26,16 +26,3 @@ app.get('/', function(req, res){
 });
 
 app.listen(80);
-// 
-// db
-//   .allDocs(function(er, doc){
-//     if (er) throw new Error(JSON.stringify(er));
-//       console.log('Fetched my new doc from couch:');
-//       console.log(doc);
-//   });
-// db
-//   .saveDoc('my-doc', {awesome: 'couch fun'}, function(er, ok) {
-//     if (er) throw new Error(JSON.stringify(er));
-//     sys.puts('Saved my first doc to the couch!');
-//   });
-// 

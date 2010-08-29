@@ -94,7 +94,7 @@ body {
     }
     
     a#prevSong:active {
-      background: url('/images/prevSong.png') no-repeat 9px 10px,
+      background: url('/images/prevSong.png') no-repeat 7px 10px,
                   -webkit-gradient(radial, 10 10, 10, 15 15, 30, from(#b2b5b7), to(#78797a), color-stop(.6,#b2b5b7));
       background: url('/images/prevSong.png') no-repeat 9px 10px,
                   -moz-radial-gradient(20px 5px 45deg, circle , #b2b5b7 0%, #b2b5b7 30%, #78797a 130%);
@@ -298,9 +298,10 @@ body {
   }
   
   ul {
-    overflow-y: scroll;
+    overflow-y: auto;
     padding: 2px 0;
     line-height: 18px;
+    border-right:1px solid #cecece;
     
     li {
       padding: 0 5px;

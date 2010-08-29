@@ -37,7 +37,3 @@ function setupLibraryCollapse() {
     }
   });
 }
-
-function setListRandomizer() {
-  
-}
