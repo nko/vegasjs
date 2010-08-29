@@ -4,10 +4,6 @@ $(document).ready(function(){
   setupWindowResizing();
   setupLibraryCollapse();
   
-  
-  
-  
-  
 });
 
 function setupWindowResizing() {

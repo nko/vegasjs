@@ -47,8 +47,16 @@
       $('#songCanvas')
         .width($(window).width() - $('#library').outerWidth())
         .height($(window).height() - $('#header').outerHeight() - $('#browser').outerHeight());
-      
     });
+    
+    $('#playlists li')
+      .bind('dblclick', function(e) {
+        $(this).attr('contenteditable', 'true');
+        $(this).focus();
+      })
+      .bind('blur', function(e) {
+        $(this).attr('contenteditable', 'false');
+      });
       
   </script>
   
