@@ -3,6 +3,7 @@
 $(document).ready(function(){
   setupWindowResizing();
   setupLibraryCollapse();
+  songClickandPlay();
 });
 
 function setupWindowResizing() {
@@ -37,3 +38,28 @@ function setupLibraryCollapse() {
     }
   });
 }
+
+function songClickandPlay() {
+  var sCan = $('#songCanvas');
+  sCan.click(function(e){
+    e.preventDefault();
+    var target = $(e.target);
+    sCan
+      .find('.focus')
+      .removeClass('focus');
+    if (target.attr('href')) {
+      target.addClass('focus');
+    }
+  });
+  
+  sCan.dblclick(function(e){
+    var target = $(e.target);
+    if (target.attr('href')) {
+      var title = target.text();
+      var artist = target.attr('title');
+      var song = target.attr('href');
+      $('#scrubber').html('<h3>' + title + '</h3><h4>' + artist + '</h4>');
+    }
+  });
+}
+

@@ -183,6 +183,15 @@ body {
     /* Background Gradient */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgb(237,240,226)), color-stop(0.5, rgb(231,234,215)), color-stop(0.51, rgb(223,227,201)), color-stop(1, rgb(243,244,226)));
     background: -moz-linear-gradient(center top, rgb(237,240,226) 0%, rgb(231,234,215) 50%, rgb(223,227,201) 51%, rgb(243,244,226) 100% );
+    
+    h3, h4 {
+      text-align:center;
+      color:#636853;
+    }
+    h3 {
+      margin:0;
+      font-weight:bold;
+    }
   }
   
 }
@@ -346,15 +355,22 @@ body {
     padding:8px 0 0 0; 
     list-style:none;
   }
-  li {
-    padding:3px 5px; 
-    background:rgba(0,0,0,0);
-  }
   li:nth-child(even) {
-    background:rgba(0,0,0,.05);
+    background:#F3F7FB;
   }
-  li:hover {
-    background:rgba(0,0,0,.1);
+  a {
+    display:block;
+    padding:3px 5px;
+    color:#000;
+    text-decoration:none;
+    
+    :active {
+      color:#000;
+    }
+  }
+  .focus {
+    background:#3691E8;
+    color:#fff;
   }
 }
 
