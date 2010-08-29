@@ -38,7 +38,7 @@ body {
  * Contains our Main Header as well as our audio controls
  */
 #header {
-  height:80px; 
+  height:85px; 
   border-top: 1px solid #e2e2e2;
   border-bottom: 1px solid #515151; 
   background:-webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0, rgb(208,208,208)), color-stop(1, rgb(167,167,167))); 
@@ -107,6 +107,22 @@ body {
     float: left;
     width: 100px;
     margin: 25px 0 0 45px;
+    
+  }  
+  #volume:before {
+    content: url('/images/volume_mute_12x9.png');
+    margin-left: -35px;
+    margin-top: -12px;
+    padding: 10px;
+    line-height: 0;
+    float: left;
+  }
+  #volume:after {
+    content: url('/images/volume_12x9.png');
+    margin-left: 105px;
+    float: left;
+    margin-top: -29px;
+    padding: 10px;
   }
   
   #scrubber {
