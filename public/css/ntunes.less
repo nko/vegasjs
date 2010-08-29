@@ -1,0 +1,27 @@
+/*
+ * nTunes LESS ==============================================================
+ *
+ * This file uses LESS as a CSS preprocessor. It's pretty much just css,
+ * with a few minor extensions. Check out http://lesscss.org/docs for more
+ * info.
+ */
+
+/*
+ * Imports
+ */
+@import "reset.less";
+
+html {background:#424242; font-family:Helvetica, sans-serif; font-size:12px; text-shadow:#fff 1px 1px 1px;}
+body {margin:30px; background:#fff; border:1px solid #999; -webkit-border-radius:5px; -webkit-box-shadow: #111 0 0 30px;}
+body h1 {padding:4px 0 0; font:normal normal normal 12px Helvetica, sans-serif; text-align:center;}
+#header {height:80px; border-bottom:2px solid #999; background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#bdbdbd), to(#808080), color-stop(.5,#B5B5B5)); -webkit-border-radius:5px 5px 0 0;}
+
+#library {width:200px; float:left; background:#EDEDED; border:solid #999; border-width:0 1px 0 0;}
+#library h2 {margin:0 0 3px 10px; padding:8px 0 0; font:normal normal bold 13px Helvetica, sans-serif; text-transform:uppercase; color:#3F3F3F;}
+#library ul {margin:0 0 0 15px; list-style:none;}
+
+#songCanvas {overflow-y:scroll; background:url('http://nodeknockout.com/images/nodeko.png') no-repeat center center;}
+#songCanvas ul {padding:8px 0 0 0; list-style:none;}
+#songCanvas li {padding:3px 5px; background:rgba(0,0,0,0);}
+#songCanvas li:nth-child(even) {background:rgba(0,0,0,.05);}
+#songCanvas li:hover {background:rgba(0,0,0,.1);}
