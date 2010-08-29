@@ -1,10 +1,13 @@
-var app = require('express').createServer();
-var sys = require('sys'),
-    couchdb = require('node-couchdb/lib/couchdb'),
+var app = require('express').createServer(),
+    express = require('express'),
+    sys = require('sys'),
+    couchdb = require('couchdb'),
     client = couchdb.createClient(5984, 'vegasjs.couchone.com'),
     db = client.db('ntunes');
 var self = this;
 this.local;
+
+app.use(express.staticProvider(__dirname + '/public'));
 
 db.getDoc('ca988e74ba39dd1c6431d61f01001624', function(er, doc) {
   if (er) throw new Error(JSON.stringify(er));
@@ -13,7 +16,7 @@ db.getDoc('ca988e74ba39dd1c6431d61f01001624', function(er, doc) {
   self.local = doc;
 });
 
-app.set('views', __dirname + '/../public/views');
+app.set('views', __dirname + '/views');
 app.get('/', function(req, res){
   res.render('index.ejs', {
     locals: {
@@ -22,7 +25,7 @@ app.get('/', function(req, res){
   });
 });
 
-app.listen(3000);
+app.listen(80);
 // 
 // db
 //   .allDocs(function(er, doc){
