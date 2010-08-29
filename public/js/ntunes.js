@@ -2,9 +2,39 @@
 
 $(document).ready(function(){
   setupWindowResizing();
-  setupLibraryCollapse();
-  songClickandPlay();
+  setupLibraryCollapse();  
+  loadSongs();
 });
+
+// Namespace our ish a little...
+ntunes = {
+  songs: [],
+  populateSongs: function() {
+    
+    var html = '';
+    
+    for (var i=0; i < this.songs.length; i++) {
+      html += '<li><a href="' + this.songs[i].path + '">' + this.songs[i].title + '</a></li>'
+    };
+    
+    $('#songCanvas ul').html(html);
+    
+    songClickandPlay();
+    
+  }
+};
+
+function loadSongs() {
+  $.ajax({
+    type: 'GET',
+    dataType: 'json',
+    url: '/catalog',
+    success: function(data) {
+      ntunes.songs = data.songs;
+      ntunes.populateSongs();
+    }
+  });
+};
 
 function setupWindowResizing() {
   var wrap = $('#wrap');
