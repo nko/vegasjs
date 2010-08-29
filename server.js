@@ -8,7 +8,7 @@
 var // Module Deps
     app = require('express').createServer(),
     express = require('express'),
-    couchdb = require('couchdb'),
+    couchdb = require('node-couchdb/lib/couchdb'),
     
     // CouchDB Connection
     client = couchdb.createClient(5984, 'vegasjs.couchone.com'),
@@ -72,4 +72,4 @@ app.get('/catalog', function(req, res) {
 }); // end app.get 
 
 // Listen on port 80
-app.listen(80); 
+app.listen(3000); 
