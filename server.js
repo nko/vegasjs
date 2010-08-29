@@ -25,7 +25,7 @@ app.get('/', function(req, res){
   });
 });
 
-app.listen(80);
+app.listen(3000);
 // 
 // db
 //   .allDocs(function(er, doc){
