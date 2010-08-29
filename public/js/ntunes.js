@@ -4,7 +4,9 @@ $(document).ready(function(){
   setupWindowResizing();
   setupLibraryCollapse();
   
-  $( "#library" ).resizable({ handles: 'e' });
+  
+  
+  
   
 });
 

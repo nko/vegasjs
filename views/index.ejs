@@ -5,13 +5,16 @@
     <a href="#">Stop</a>
   </div>
 </div>
+<audio>
+  
+</audio>
 <div id="wrap">
   <div id="library">
     <h2>Library</h2>
     <ul>
       <li>Music</li>
     </ul>
-    <h2>Playlist</h2>
+    <h2>Playlists</h2>
     <ul>
       <li>Test Playlist Name</li>
       <li>Test Playlist Name</li>
@@ -28,7 +31,51 @@
       <li>Test Playlist Name</li>
     </ul>
   </div>
-  <div id="songCanvas">
+  
+  <div id="browser">
+    <div id="genres">
+      <h2>Genres</h2>
+      <ul>
+        <li>All (6)</li>
+        <li>Pop</li>
+        <li>Punk</li>
+        <li>Rocking</li>
+        <li>This</li>
+        <li>Pop</li>
+      </ul>      
+    </div> <!-- /genres -->
+    <div id="artists">
+      <h2>Artists</h2>
+      <ul>
+        <li>All (14)</li>
+        <li>NIN</li>
+        <li>Rage Against the Machine</li>
+        <li>Smashing Pumpkins</li>
+        <li>Semi-sonic</li>
+        <li>Aqua</li>
+        <li>Spice Girls</li>
+        <li>Blind Melon</li>
+        <li>Randy Newman</li>
+        <li>Tower of Power</li>
+        <li>Bob Marley</li>
+        <li>Ziggy Marley</li>
+        <li>Ted Nugent</li>
+        <li>ZZ Top</li>
+        <li>Berlin</li>  
+      </ul>            
+    </div> <!-- /artists -->
+    <div id="albums">        
+      <h2>Albums</h2>
+      <ul>
+        <li>All (2)</li>
+        <li>Ghost</li>
+        <li>And all that could have been</li>  
+      </ul>
+    </div> <!-- /albums -->
+    <div class="clear">&nbsp;</div>             
+  </div> <!-- /browser -->
+  
+  <div id="songCanvas">    
     <ul>
       <% for(var i = 0; i < songs.length; i++) { %>
       <li><%= songs[i].title %></li>

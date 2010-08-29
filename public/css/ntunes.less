@@ -42,6 +42,7 @@ body {
   border-top: 1px solid #e2e2e2;
   border-bottom: 1px solid #515151; 
   background:-webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0, rgb(208,208,208)), color-stop(1, rgb(167,167,167))); 
+  background: -moz-linear-gradient(center top, rgb(208,208,208) 0%, rgb(166,166,166) 100%);
   
   h1 {
     padding:4px 0 0; 
@@ -113,12 +114,75 @@ body {
     right: 0px; 
     top: 0; 
     height: 100%;
-    border-left: 1px solid #a5a5a5;
-    background: -webkit-gradient(linear, left top, right top, color-stop(0, rgb(250,250,250)), color-stop(1, rgb(227,227,227)));
-    background: -moz-linear-gradient(left center, rgb(250,250,250) 0%, rgb(227,227,227) 100%);
+    
+    
   }  
   
 }
+
+/*
+ * Browser
+ * 
+ * This is the 3-column browser, containing Genre, Artists, and Albums
+ */
+#browser {
+  background: #f4f7fb;
+  margin-bottom: 0;
+  float: left;
+  height: 200px;
+  overflow: hidden;
+  
+  div {
+    width: 33%;
+    float: left;
+  }
+  #artists {
+    width: 34%;
+  }
+  
+  h2 {
+    font-weight: bold;
+    text-align: center;
+    text-shadow:#FFF 1px 1px 1px;
+    border-top: 1px solid #cecece;
+    border-bottom: 1px solid #cecece;
+    border-right: 1px solid #cecece;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgb(245,245,245)), color-stop(0.3, rgb(254,254,254)), color-stop(1, rgb(237,237,237)));
+    background: -moz-linear-gradient(center top, rgb(245,245,245) 0%, rgb(254,254,254) 30%, rgb(237,237,237) 100%);
+  }
+  
+  ul {
+    overflow-y: scroll;
+    padding: 2px 0;
+    line-height: 18px;
+    
+    li {
+      padding: 0 5px;
+    }
+    li:hover {
+      background:rgba(0,0,0,.05);
+      cursor: pointer;
+    }
+  }
+  
+  .clear {
+    clear: both;
+    height: 1px;
+    overflow: hidden;
+  }
+  
+  .ui-resizable-s {
+    width: 100%;
+    cursor: row-resize;
+    height: 8px;
+    bottom: 0;
+    border-bottom: 1px solid #a5a5a5;
+    border-top: 1px solid #a5a5a5;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgb(250,250,250)), color-stop(1, rgb(227,227,227)));
+    background: -moz-linear-gradient(left center, rgb(250,250,250) 0%, rgb(227,227,227) 100%);
+  }
+}
+
 
 /*
  * Song Canvas
@@ -126,11 +190,11 @@ body {
  * Where library and playlist browsing happens
  */
 #songCanvas {
-  height:100%; 
   overflow-y:scroll; 
   background: url('http://nodeknockout.com/images/nodeko.png') no-repeat center center; 
   -webkit-border-radius:0 0 5px 0;
   border: 0;
+  float: left;
   
   ul {
     padding:8px 0 0 0; 

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>nTunes!!!</title>
   <link rel="stylesheet" href="/css/Aristo/jquery-ui-1.8rc3.custom.css" type="text/css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet/less" href="/css/ntunes.less" type="text/css" />
@@ -10,11 +11,47 @@
   <script src="/js/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="/js/jquery-ui-1.8.4.custom.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="/js/modernizr-1.5.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/less-1.0.35.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/ntunes.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/less-1.0.35.js" type="text/javascript" charset="utf-8"></script>  
   <script type="text/javascript" charset="utf-8">
     less.env = "development";
     less.watch();
+    
+    $("#library").resizable({ 
+      handles: 'e',
+      resize: function(event, ui) {
+        var w = $(window).width() - $('#library').outerWidth();
+        $('#browser').width(w);
+        $('#songCanvas').width(w);
+      }
+    });
+    
+    $('#browser')
+      .width($(window).width() - $('#library').outerWidth())
+      .resizable({ handles: 's', resize: function(e, ui) {
+        $('#songCanvas')
+          .height($(window).height() - $('#header').outerHeight() - $('#browser').outerHeight());
+        $('#browser ul')
+          .height($('#browser').height() - $('browser h2').outerHeight());
+      }});
+    
+    $('#songCanvas')
+      .width($(window).width() - $('#library').outerWidth())
+      .height($(window).height() - $('#header').outerHeight() - $('#browser').outerHeight());
+      
+    $('#browser ul')
+      .height($('#browser').height() - $('browser h2').outerHeight());
+      
+    $(window).bind('resize', function() {
+      $('#browser')
+        .width($(window).width() - $('#library').outerWidth());
+      $('#songCanvas')
+        .width($(window).width() - $('#library').outerWidth())
+        .height($(window).height() - $('#header').outerHeight() - $('#browser').outerHeight());
+      
+    });
+      
   </script>
+  
+  <script src="/js/ntunes.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
