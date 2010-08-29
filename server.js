@@ -9,7 +9,7 @@ this.local = [];
 
 app.use(express.staticProvider(__dirname + '/public'));
 
-db.getDoc('ca988e74ba39dd1c6431d61f01001624', function(er, doc) {
+db.getDoc('ca988e74ba39dd1c6431d61f010072ff', function(er, doc) {
   if (er) throw new Error(JSON.stringify(er));
   sys.puts('Fetched my new doc from couch:');
   sys.puts(sys.inspect(doc));

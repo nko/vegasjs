@@ -61,9 +61,17 @@
     
     $('#volume').slider({
       min: 0,
-      max: 100,
-      value: 30,
-      animate: true
+      max: 10,
+      value: 7,
+      animate: true,
+      slide: function(event, ui) {
+        if (ui.value === 10) {
+          var num = 1; 
+        } else {
+          var num = '.' + ui.value
+        }
+        document.getElementById('playa').volume = num;
+      }
     });
     
     $('#controls a').bind('click', function(e) {

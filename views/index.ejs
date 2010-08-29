@@ -12,7 +12,7 @@
   <div id="volume">&nbsp;</div>
   
   <div id="scrubber">
-    &nbsp;
+    
   </div>
   
   <div id="nodeKO">
@@ -85,9 +85,9 @@
   <div id="songCanvas">    
     <ul>
       <% for(var i = 0; i < songs.length; i++) { %>
-      <li><a href="<%= songs[i].filePath %>" title="<%= songs[i].artist %>"><%= songs[i].title %></a></li>
+      <li><a href="<%= songs[i].path %>" title="<%= songs[i].artist %>"><%= songs[i].title %></a></li>
       <% } %>
-      <li><a href="#" title="Band of Horses">Test Song Name</a></li>
+      <li><a href="There is a place" title="Band of Horses">Test Song Name</a></li>
       <li><a href="#" title="Band of Horses">Test Song Name</a></li>
       <li><a href="#" title="Band of Horses">Test Song Name</a></li>
       <li><a href="#" title="Band of Horses">Test Song Name</a></li>
