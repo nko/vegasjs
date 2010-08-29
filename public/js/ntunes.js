@@ -21,7 +21,62 @@ ntunes = {
     
     songClickandPlay();
     
+  },
+  populateGenres: function() {
+
+    var html = '',
+        genres = [];
+
+    for (var i=0; i < this.songs.length; i++) {
+      genres.push(this.songs[i].genre);      
+    };
+    
+    genres = _.uniq(genres)
+    
+    for (var k=0; k < genres.length; k++) {
+      html += '<li>' + genres[k] + '</li>'
+    };
+    
+    $('#genres ul').html(html);
+
+  },
+  populateArtists: function() {
+
+    var html = '',
+        artists = [];
+
+    for (var i=0; i < this.songs.length; i++) {
+      artists.push(this.songs[i].artist);      
+    };
+    
+    artists = _.uniq(artists)
+    
+    for (var k=0; k < artists.length; k++) {
+      html += '<li>' + artists[k] + '</li>'
+    };
+    
+    $('#artists ul').html(html);
+
+  },
+  populateAlbums: function() {
+
+    var html = '',
+        albums = [];
+
+    for (var i=0; i < this.songs.length; i++) {
+      albums.push(this.songs[i].album);
+    };
+    
+    albums = _.uniq(albums)
+    
+    for (var k=0; k < albums.length; k++) {
+      html += '<li>' + albums[k] + '</li>'
+    };
+    
+    $('#albums ul').html(html);
+
   }
+  
 };
 
 function loadSongs() {
@@ -33,6 +88,9 @@ function loadSongs() {
     success: function(data) {
       ntunes.songs = data.songs;
       ntunes.populateSongs();
+      ntunes.populateGenres();
+      ntunes.populateArtists();
+      ntunes.populateAlbums();
     }
   });
 };
