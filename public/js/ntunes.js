@@ -25,6 +25,7 @@ ntunes = {
 };
 
 function loadSongs() {
+  $('#playPause').addClass('paused');
   $.ajax({
     type: 'GET',
     dataType: 'json',
@@ -88,6 +89,7 @@ function songClickandPlay() {
       var title = target.text();
       var artist = target.attr('title');
       var song = target.attr('href');
+      $('#playPause').toggleClass('paused');
       $('#scrubber').html('<h3>' + 
                           title + 
                           '</h3><h4>' + 
@@ -104,11 +106,12 @@ function songClickandPlay() {
     var playa = document.getElementById('playa');
     if (!$(playa).hasClass('paused')) {
       playa.pause();
-      $(playa).addClass('paused');
-      $(this).addClass('paused');
+      $(playa).toggleClass('paused');
+      $(this).toggleClass('paused');
     } else {
       playa.play();
-      $(playa).removeClass('paused');
+      $(playa).toggleClass('paused');
+      $(this).toggleClass('paused');
     }
   });
   

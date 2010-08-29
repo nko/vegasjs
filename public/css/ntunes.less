@@ -123,10 +123,10 @@ body {
       -webkit-border-radius: 20px; 
       border-radius: 20px;
       
-      background: url('/images/play_pause_button.png') no-repeat 15px 10px,
+      background: url('/images/play_pause_button.png') no-repeat 13px -150px,
                   -webkit-gradient(linear, left top, left bottom, color-stop(0, rgb(240,240,240)), color-stop(1, rgb(186,189,191)));
 
-      background: url('/images/play_pause_button.png') no-repeat 15px 10px,
+      background: url('/images/play_pause_button.png') no-repeat 13px -150px,
                   -moz-linear-gradient(center top, rgb(240,240,240) 0%, rgb(186,189,191) 100%);
     }
     
@@ -138,10 +138,16 @@ body {
                   -webkit-gradient(radial, 10 10, 10, 15 15, 30, from(#b2b5b7), to(#78797a), color-stop(.6,#b2b5b7))
     }
     
+    a#playPause.paused {
+      background: url('/images/play_pause_button.png') no-repeat 15px 10px,
+                  -webkit-gradient(linear, left top, left bottom, color-stop(0, rgb(240,240,240)), color-stop(1, rgb(186,189,191)));
+
+      background: url('/images/play_pause_button.png') no-repeat 15px 10px,
+                  -moz-linear-gradient(center top, rgb(240,240,240) 0%, rgb(186,189,191) 100%);
+
+    }
   }
-  a#playPause.paused {
-    background-position:;
-  }
+  
   
   #volume {
     float: left;
