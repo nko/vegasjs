@@ -3,6 +3,7 @@
 $(document).ready(function(){
   setupWindowResizing();
   setupLibraryCollapse();
+  setListRandomizer();
 });
 
 function setupWindowResizing() {
@@ -21,14 +22,12 @@ function setupLibraryCollapse() {
     var target = e.target;
     if(target.tagName == 'H2') {
       if(!$(target).hasClass('closed')) {
-        console.log('foo');
         $(target)
             .next('UL')
             .slideUp('fast')
           .end()
             .addClass('closed');
       } else {
-        console.log('bar');
         $(target)
             .next('UL')
             .slideDown('fast')
@@ -38,4 +37,8 @@ function setupLibraryCollapse() {
       
     }
   });
+}
+
+function setListRandomizer() {
+  
 }
