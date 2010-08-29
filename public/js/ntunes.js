@@ -4,6 +4,7 @@ $(document).ready(function(){
   setupWindowResizing();
   setupLibraryCollapse();
   setListRandomizer();
+  $( "#library" ).resizable({ handles: 'e' });
 });
 
 function setupWindowResizing() {
