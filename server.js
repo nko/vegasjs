@@ -25,7 +25,6 @@ this.local = [];
 app.use(express.staticProvider(__dirname + '/public')); // Serve static files from /public
 app.set('views', __dirname + '/views'); // Use /views as our template directory
 
-
 /**
  * Routes
  */

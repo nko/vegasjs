@@ -58,7 +58,33 @@ function songClickandPlay() {
       var title = target.text();
       var artist = target.attr('title');
       var song = target.attr('href');
-      $('#scrubber').html('<h3>' + title + '</h3><h4>' + artist + '</h4>');
+      $('#scrubber').html('<h3>' + 
+                          title + 
+                          '</h3><h4>' + 
+                          artist + 
+                          '</h4><audio id="playa" autoplay autobuffer><source src="/music/ogg/' + 
+                          song + 
+                          '.ogg" /><source src="/music/mp3/' + 
+                          song + 
+                          '.mp3" /></audio>');
+    }
+  });
+  
+  $('#playPause').click(function(){
+    var playa = document.getElementById('playa');
+    if (!$(playa).hasClass('paused')) {
+      playa.pause();
+      $(playa).addClass('paused');
+      $(this).addClass('paused');
+    } else {
+      playa.play();
+      $(playa).removeClass('paused');
+    }
+  });
+  
+  $('body').keypress(function(e){
+    if (e.keyCode == '32') {
+      $('#playPause').click();
     }
   });
 }
