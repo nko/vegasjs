@@ -349,16 +349,12 @@ body {
  * Where library and playlist browsing happens
  */
 #songCanvas {
-  overflow-y:scroll; 
+  overflow-y:auto; 
   -webkit-border-radius:0 0 5px 0;
   border: 0;
   float: left;
   
-  ul {
-    padding:8px 0 0 0; 
-    list-style:none;
-  }
-  li:nth-child(even) {
+  a:nth-child(even) {
     background:#F3F7FB;
   }
   a {
@@ -372,7 +368,7 @@ body {
     }
   }
   .focus {
-    background:#3691E8;
+    background:#3691E8 !important;
     color:#fff;
   }
 }

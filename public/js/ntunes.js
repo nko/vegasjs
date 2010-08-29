@@ -14,10 +14,10 @@ ntunes = {
     var html = '';
     
     for (var i=0; i < this.songs.length; i++) {
-      html += '<li><a href="' + this.songs[i].path + '">' + this.songs[i].title + '</a></li>'
+      html += '<a href="' + this.songs[i].path + '" title="' + this.songs[i].artist + '">' + this.songs[i].title + '</a>'
     };
     
-    $('#songCanvas ul').html(html);
+    $('#songCanvas').html(html);
     
     songClickandPlay();
     
@@ -85,6 +85,7 @@ function songClickandPlay() {
   sCan.dblclick(function(e){
     var target = $(e.target);
     if (target.attr('href')) {
+      target.attr('id', 'playing');
       var title = target.text();
       var artist = target.attr('title');
       var song = target.attr('href');
@@ -98,6 +99,9 @@ function songClickandPlay() {
                           song + 
                           '.mp3" /></audio>');
     }
+    document.getElementById('playa').addEventListener('onended', function(){
+      $('#playing').next('A').dblclick().end().attr('id', '');
+    }, false);
   });
   
   $('#playPause').click(function(){
@@ -110,6 +114,16 @@ function songClickandPlay() {
       playa.play();
       $(playa).removeClass('paused');
     }
+  });
+  
+  $('#nextSong').click(function(e){
+    e.preventDefault();
+    $('#playing').next('A').dblclick().end().attr('id', '');
+  });
+  
+  $('#prevSong').click(function(e){
+    e.preventDefault();
+    $('#playing').prev('A').dblclick().end().attr('id', '');
   });
   
   $('body').keypress(function(e){
