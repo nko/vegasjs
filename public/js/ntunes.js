@@ -7,12 +7,12 @@ $(document).ready(function(){
 
 function setupWindowResizing() {
   var wrap = $('#wrap');
-  wrap.height($(window).height() - 144);
-  $('body').height($(window).height() - 62);
+  wrap.height($(window).height() - $('#header').height());
+  $('body').height($(window).height());
   
   $(window).resize(function(){
-    wrap.height($(window).height() - 144);
-    $('body').height($(window).height() - 62);
+    wrap.height($(window).height() - $('#header').height());
+    $('body').height($(window).height());
   });
 }
 

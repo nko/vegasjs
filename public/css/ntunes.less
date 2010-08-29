@@ -8,21 +8,110 @@
 
 /*
  * Imports
+ * 
+ * These allow us to 
  */
 @import "reset.less";
 
-html {height:100%; background:#424242; font-family:Helvetica, sans-serif; font-size:12px; text-shadow:#fff 1px 1px 1px;}
-body {position:relative; height:90%; overflow:hidden; margin:30px; background:#fff; border:1px solid #999; -webkit-border-radius:5px; -webkit-box-shadow:#111 0 0 30px;}
-body h1 {padding:4px 0 0; font:normal normal normal 12px Helvetica, sans-serif; text-align:center;}
-#header {height:80px; border-bottom:2px solid #999; background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#bdbdbd), to(#808080), color-stop(.5,#B5B5B5)); -webkit-border-radius:5px 5px 0 0;}
+/*
+ * Core Defintions
+ * 
+ * HTML, body, main containers, the big ones
+ */
+html { 
+  height:100%; 
+  background:#424242; 
+  font-family:Helvetica, sans-serif; 
+  font-size:12px; 
+  text-shadow:#fff 1px 1px 1px;
+}
+body {
+  position:relative; 
+  height:100%; 
+  overflow:hidden; 
+  background:#fff; 
+}
+h1 {
+  padding:4px 0 0; 
+  font:normal normal normal 12px Helvetica, sans-serif; 
+  text-align:center;
+}
 
-#wrap {height:100%; overflow:hidden; position:relative;}
-#library {overflow-y:auto; width:200px; height:100%; float:left; background:#EDEDED; border:solid #999; border-width:0 1px 0 0; -webkit-border-radius:0 0 0 5px;}
-#library h2 {margin:0 0 3px 10px; padding:8px 0 0; font:normal normal bold 13px Helvetica, sans-serif; text-transform:uppercase; color:#3F3F3F;}
-#library ul {margin:0 0 0 15px; list-style:none;}
+/*
+ * Header
+ * 
+ * Contains our Main Header as well as our audio controls
+ */
+#header {
+  height:80px; 
+  border-bottom:2px solid #999; 
+  background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#bdbdbd), to(#808080), color-stop(.5,#B5B5B5)); 
+}
 
-#songCanvas {height:100%; overflow-y:scroll; background:url('http://nodeknockout.com/images/nodeko.png') no-repeat center center; -webkit-border-radius:0 0 5px 0;}
-#songCanvas ul {padding:8px 0 0 0; list-style:none;}
-#songCanvas li {padding:3px 5px; background:rgba(0,0,0,0);}
-#songCanvas li:nth-child(even) {background:rgba(0,0,0,.05);}
-#songCanvas li:hover {background:rgba(0,0,0,.1);}
+/*
+ * Wrap
+ * 
+ * The div used to resize our Library and songCanvas
+ */
+#wrap { 
+  height:100%; 
+  overflow:hidden; 
+  position:relative;
+}
+
+
+/*
+ * Library
+ * 
+ * The left-hand pane that contains your Library and playlists 
+ */
+#library {
+  overflow-y:auto; 
+  width:200px; 
+  height:100%; 
+  float:left; 
+  background:#EDEDED; 
+  border:solid #999; 
+  border-width:0 1px 0 0; 
+  -webkit-border-radius:0 0 0 5px;
+
+  h2 {
+    margin:0 0 3px 10px; 
+    padding:8px 0 0; 
+    font:normal normal bold 13px Helvetica, sans-serif; 
+    text-transform:uppercase; 
+    color:#3F3F3F;
+  }
+  ul {
+    margin:0 0 0 15px; 
+    list-style:none;
+  }
+}
+
+/*
+ * Song Canvas
+ * 
+ * Where library and playlist browsing happens
+ */
+#songCanvas {
+  height:100%; 
+  overflow-y:scroll; 
+  background: url('http://nodeknockout.com/images/nodeko.png') no-repeat center center; 
+  -webkit-border-radius:0 0 5px 0;
+  
+  ul {
+    padding:8px 0 0 0; 
+    list-style:none;
+  }
+  li {
+    padding:3px 5px; 
+    background:rgba(0,0,0,0);
+  }
+  li:nth-child(even) {
+    background:rgba(0,0,0,.05);
+  }
+  li:hover {
+    background:rgba(0,0,0,.1);
+  }
+}
+
