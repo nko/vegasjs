@@ -180,11 +180,13 @@ function songClickandPlay() {
   $('#nextSong').click(function(e){
     e.preventDefault();
     $('#playing').next('A').dblclick().end().attr('id', '');
+    $('#playPause').toggleClass('paused');
   });
   
   $('#prevSong').click(function(e){
     e.preventDefault();
     $('#playing').prev('A').dblclick().end().attr('id', '');
+    $('#playPause').toggleClass('paused');
   });
   
   $('body').keypress(function(e){
