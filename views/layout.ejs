@@ -31,7 +31,7 @@
         $('#songCanvas')
           .height($(window).height() - $('#header').outerHeight() - $('#browser').outerHeight());
         $('#browser ul')
-          .height($('#browser').height() - $('browser h2').outerHeight());
+          .height($('#browser').height() - $('#browser h2').outerHeight() - $('#browser .ui-resizable-s').outerHeight());
       }});
     
     $('#songCanvas')
@@ -39,7 +39,7 @@
       .height($(window).height() - $('#header').outerHeight() - $('#browser').outerHeight());
       
     $('#browser ul')
-      .height($('#browser').height() - $('browser h2').outerHeight());
+      .height($('#browser').height() - $('#browser h2').outerHeight() - $('#browser .ui-resizable-s').outerHeight());
       
     $(window).bind('resize', function() {
       $('#browser')
@@ -57,6 +57,18 @@
       .bind('blur', function(e) {
         $(this).attr('contenteditable', 'false');
       });
+    
+    
+    $('#volume').slider({
+      min: 0,
+      max: 100,
+      value: 30,
+      animate: true
+    });
+    
+    $('#controls a').bind('click', function(e) {
+      e.preventDefault();
+    });
       
   </script>
   
