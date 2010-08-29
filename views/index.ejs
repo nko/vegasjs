@@ -1,30 +1,88 @@
 <div id="header">
   <h1>Welcome to nTunes</h1>
   <div id="controls">
-    <a href="#">Play/Pause</a>
-    <a href="#">Stop</a>
+    <ul>
+      <li></li>
+    </ul>    
+    <a href="#" id="prevSong">Previous Song</a>
+    <a href="#" id="playPause">Play/Pause</a>
+    <a href="#" id="nextSong">Next Song</a>
   </div>
+
+  <div id="volume">&nbsp;</div>
+  
+  <div id="scrubber">
+    &nbsp;
+  </div>
+  
+  <div id="nodeKO">
+    <a href="http://nodeknockout.com/teams/vegasjs" target="nko" title="Help me win Node.js KO!"><img style="position: fixed; top: 18px; right: 5px; border: 0px;" src="http://nodeknockout.com/images/voteko.png" alt="Help me win Node.js KO!" /></a>
+  </div>
+  
 </div>
+
 <div id="wrap">
   <div id="library">
-    <h2>playlist library</h2>
+    <h2>Library</h2>
     <ul>
-      <li>Test Playlist Name</li>
-      <li>Test Playlist Name</li>
-      <li>Test Playlist Name</li>
-      <li>Test Playlist Name</li>
-      <li>Test Playlist Name</li>
-      <li>Test Playlist Name</li>
-      <li>Test Playlist Name</li>
-      <li>Test Playlist Name</li>
-      <li>Test Playlist Name</li>
-      <li>Test Playlist Name</li>
-      <li>Test Playlist Name</li>
-      <li>Test Playlist Name</li>
-      <li>Test Playlist Name</li>
+      <li>Music</li>
+    </ul>
+    <h2>Playlists</h2>
+    <ul id="playlists">
+      <li>Rockin the 80s</li>
+      <li>High School</li>
+      <li>Favs</li>
+      <li>Workout Music</li>
+      <li>ZOMG</li>
+      <li>Road Trippin</li>
+      <li>Blues</li>
     </ul>
   </div>
-  <div id="songCanvas">
+  
+  <div id="browser">
+    <div id="genres">
+      <h2>Genres</h2>
+      <ul>
+        <li>All (6)</li>
+        <li>Pop</li>
+        <li>Punk</li>
+        <li>Rocking</li>
+        <li>This</li>
+        <li>Pop</li>
+      </ul>      
+    </div> <!-- /genres -->
+    <div id="artists">
+      <h2>Artists</h2>
+      <ul>
+        <li>All (14)</li>
+        <li>NIN</li>
+        <li>Rage Against the Machine</li>
+        <li>Smashing Pumpkins</li>
+        <li>Semi-sonic</li>
+        <li>Aqua</li>
+        <li>Spice Girls</li>
+        <li>Blind Melon</li>
+        <li>Randy Newman</li>
+        <li>Tower of Power</li>
+        <li>Bob Marley</li>
+        <li>Ziggy Marley</li>
+        <li>Ted Nugent</li>
+        <li>ZZ Top</li>
+        <li>Berlin</li>  
+      </ul>            
+    </div> <!-- /artists -->
+    <div id="albums">        
+      <h2>Albums</h2>
+      <ul>
+        <li>All (2)</li>
+        <li>Ghost</li>
+        <li>And all that could have been</li>  
+      </ul>
+    </div> <!-- /albums -->
+    <div class="clear">&nbsp;</div>             
+  </div> <!-- /browser -->
+  
+  <div id="songCanvas">    
     <ul>
       <% for(var i = 0; i < songs.length; i++) { %>
       <li><%= songs[i].title %></li>

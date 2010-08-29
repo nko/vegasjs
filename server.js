@@ -1,7 +1,7 @@
 var app = require('express').createServer(),
     express = require('express'),
     sys = require('sys'),
-    couchdb = require('node-couchdb/lib/couchdb'),
+    couchdb = require('couchdb'),
     client = couchdb.createClient(5984, 'vegasjs.couchone.com'),
     db = client.db('ntunes');
 var self = this;
@@ -25,7 +25,7 @@ app.get('/', function(req, res){
   });
 });
 
-app.listen(3000);
+app.listen(80);
 // 
 // db
 //   .allDocs(function(er, doc){
